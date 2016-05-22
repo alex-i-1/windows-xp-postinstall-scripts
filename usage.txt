@@ -1,0 +1,13 @@
+
+Download all scripts.
+Read/check the content of each (at least that they don't do some extra stuff which you wouldn't expect from them to do).
+Choose the ones you need.
+
+Since many of these scripts are touching important settings of the OS, they represent some potential danger when used.
+It is better to use them right after the OS is installed; it is when you don't care much about any possible damage to OS because you may freely reinstall it again.
+The threat although isn't big, and mostly consists of :  the old settings are not being backed up (and thus you will just lose them), the new non-default settins (which were not present) might be added, some items might be deleted (like some trash you might see in start menu (*that's not implemented at this moment)).
+
+Some scripts did require to be run in a specific order, and that's why there are folders with a number names on them.
+I am though still unsure which particular script is colliding with some other one, thus the numbering is left for testing.
+But otherwise this numeration is meaningless.
+

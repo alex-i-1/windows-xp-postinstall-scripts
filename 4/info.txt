@@ -1,0 +1,5 @@
+
+Scripts in this folder require additional COM DLL to be installed.
+Register "wnd_controls.dll" with applied .bat file, otherwise, "ActiveX component can't create object: 'Wnd_controls.WndCtrls'" error will appear.
+And unregister it after use.
+

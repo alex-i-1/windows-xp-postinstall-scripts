@@ -1,0 +1,60 @@
+
+Some technical data.
+
+
+
+Have to use a VBS for these things to change.
+
+Change desktop to Classic view.
+A bunch of registry keys are changed.
+No programmatic way to initiate it also.
+"classic_desktop.vbs"
+
+Folder view :  Icons -> List.
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams\Settings: 08 00 00 00 01   change to   08 00 00 00 03
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams\Defaults\{F3364BA0-65B9-11CE-A9BA-00AA004AE837}: 1C 00 00 00 01   change to   1C 00 00 00 03
+*I could only find "rundll32.exe shell32.dll,Options_RunDLL 0" (7 doesn't work) and 'GetUserBandsStream()' in ReactOS 0.3.14.
+"folder_view_list.vbs"
+
+Don't ask for confirmation, when a file is being moved to Recycle Bin.
+"recycle_bin_no_confirmation.vbs"
+*note, a confirmation when deleting files from Recycle Bin still stays; can't disable it; have to modify executable file for that.
+
+
+
+I can't offer how to change a System Restore settings, because they are stored on C: in "drivetable.txt".
+A VBS, again, might be used.
+
+
+
+Start Menu small icons setting is in :
+95, 98, Me, NT :  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects]
+2000, XP :  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects2]
+byte 8 (for me it is 06; for NT it is at byte 52)
+0 - Auto Hide
+1 - Always on Top
+2 - Show small icons
+3 - Hide Clock
+
+for XP menu (not Classic) there is [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Start_LargeMFUIcons]
+
+*A VBS is done instead of bother that binary structure.
+
+
+
+Remove IE icon from Desktop.
+
+----------------------------------
+Keys added:1
+----------------------------------
+HKEY_USERS\S-1-5-21-776561741-152049171-299502267-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu
+
+----------------------------------
+Values added:3
+----------------------------------
+HKEY_USERS\S-1-5-21-776561741-152049171-299502267-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel\{871C5380-42A0-1069-A2EA-08002B30309D}: 0x00000001
+HKEY_USERS\S-1-5-21-776561741-152049171-299502267-1003\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu\{871C5380-42A0-1069-A2EA-08002B30309D}: 0x00000001
+HKEY_USERS\S-1-5-21-776561741-152049171-299502267-1003\Software\Microsoft\Windows\ShellNoRoam\MUICache\@shdoclc.dll,-10241: "Open &Home Page"
+
+*Done by a VBS.
+

@@ -1,0 +1,90 @@
+	2013-01-10 - 2013-02-14
+	by Alexander Ilyin
+
+
+
+Registry settings for Windows XP, which have to be set after its install.
+For me :  these .reg and .bat files are intended to be launched one by one, right after a fresh Windows XP has been installed.
+For others :  review them all, take a necessary ones, modify as required.
+Because :  there is only a small probability, that you want your next language to be set Russian, and there is a very big probability, that you don't want that your country would be chosen as Lithuania :)
+
+*
+Folder "counter" consists of some scripts, which work in a counter direction.
+Folder "data" consists of files which can't be used directly, but are used through other .bat files.
+Keyboard layout switching must be modified for .DEFAULT, instead of current, but it isn't :/ (it has to be done before our user is being created, thus, that it would be created with those, preferenced settings)
+
+Folders :
+"1" - contains scripts which have to be launched before other ones (do computer restart after using them).
+"2" - most of scripts.
+"3" - region-specific ones.
+"4" - require additional registreable COM DLL to be used (DLL and its source are applied).
+
+default_non-unicode_rus.bat - <self explainable>
+keyboard_en_ru_lt.bat - setup input languages
+power_options.bat - <self explainable>
+
+automatic_updates_off.reg - disable windows updates
+cdrom_autorun_off.reg - <self explainable> (note :  the "AutoRun" value is of DWORD type, not of STRING; if put there a string "0", the autorun will still work (for example :  Windows installation disk will make the first entry of popup menu to be "AutoPlay", and it will be in bold (default action), instead of normal "Open" entry))
+classic_control_panel.reg - <self explainable>
+delete_device_mounts.reg - when want to copy Windows XP onto another device or partition
+desktop_icons_rearrange_off.reg - <self explainable> *don't use it, it will lock the quick launch panel.
+advanced\desktop_xxx.reg - redirects desktop to show the content of another place/folder
+dfrg_off.reg - turn off defragmentation on user idle
+disable_desktop_cleanup_wizard.reg - disable Desktop Cleanup Wizard
+disable_f1.reg - turn off Windows Help on F1
+disable_f3_3.reg - disable Windows Search on F3
+disable_superfluous_services.reg - disable unnecessary services
+disable_windows_tour.reg - disables Windows Tour for the current, and any newly created user
+international.reg - set date format to ISO-8601
+//keyboard_layout.reg - keyboard cycling with Alt-Shift (perhaps is not necessary)
+keyboard_cursor_blink_rate_100.reg - set 100 ms period for the cursor blink
+keyboard_delay_0.reg - set minimal keyboard delay before repeat
+keyboard_speed_31.reg - set maximal keyboard repeat ratio
+layout_hotkeys.reg - setup keyboard layout switch hotkeys
+layout_toggle_off.reg - disable Alt+Shift and Ctrl+Shift for toggling between layout (toggling is a very disturbing function - very inconvenient in use; use a hotkeys instead to switch between layouts; this .reg has to be applied after "keyboard_xx_yy.bat", otherwise its effect will be superseded)
+max_cached_icons_2000.reg - <self explainable>
+mouse_acceleration_off.reg - turn off "Enhance pointer precision"
+mouse_pointer_speed.reg - <self explainable>
+my_country_lt.reg - set my location
+no_hide_icons.reg - disable "hide inactive icons"
+no_use_personalized_menus.reg - disable start menu option, which hides a seldom used entries
+NoDriveTypeAutorun_ff.reg - disables autorun from devices
+NoDriveTypeAutorun_ffffffff.reg - same, but also disables autorun of a network drive being connected (warning, "Autorun" still stays the primary selection for that drive)
+NoStrCmpLogical_on.reg - changes the way an items in a folder view are sorted
+notification_antivirus_off.reg - disables no-antivirus notification
+notification_updates_off.reg - disable no-updates notification
+paging_file_off.reg - <self explainable>
+quick_launch_1_row.reg - <self explainable>
+quick_launch_2_rows.reg - <self explainable>
+recycle_bin_100_percent.reg - set Recycle Bin parameters
+screen_saver_off.reg - <self explainable>
+screensaver_no_welcome_screen.reg - going off the screensaver, doesn't bring to Welcome Screen
+show_file_extension.reg - <self explainable>
+start_menu_small_icons.reg - <self explainable>
+WaitToKillServiceTimeout_20.reg - for the case if you wish to use Windows XP on a Pentium 2 and slower computers, you have to widen this value from the normal one
+
+classic_desktop.vbs - <self explainable>
+folder_view_list.vbs - change folder view from Icons to List
+power_buttons_off.vbs - change power button actions to "Do nothing"
+recycle_bin_no_confirmation.vbs - don't ask for confirmation when I delete a file
+
+unattend.txt - unattended installation of WinXP.
+For CD installation, it has to be renamed to "winnt.sif", and placed into "I386" directory.
+Put CD-key into it, as a value for "ProductID".
+*that file actually didn't work for me, and there also is nothing important in it, except that I expected that Win installer will not ask me for attention, when this file is available for it.
+
+"quick_launch_x_rows.reg"
+Will not work, because those values will be updated at the exit from explorer.
+Apply them, forceably stop the explorer, and restart it again (stop and start can be done from Windows Task Manager, or from a batch script).
+
+
+
+After that, change also :
+[none]
+
+
+
+Some helpful posts of "mr_unreliable" were used in creation of VBScripts.
+
+
+

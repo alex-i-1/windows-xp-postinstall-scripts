@@ -1,0 +1,40 @@
+[Unattended]
+;Method = Express|Custom
+NtUpgrade = Manual
+Win31Upgade = No
+;TargetPath = *|<Path Name>|Manual
+;OverwriteOemFilesOnUpgrade = Yes|No
+ConfirmHardware = No
+OEMPreinstall = No
+FileSystem = LeaveAlone
+ExtendOemPartition = 0
+ComputerType = "Personally tuned XP","RETAIL"
+
+;KeyboardLayout = <Layout description>
+;  Example;
+;  KeyBoardLayout = "US-International"
+
+[GuiUnattended]
+OemSkipWelcome = 1
+OemBlankadminPassword = 1
+TimeZone = 125
+;TimeZone = "FLE Standard Time"
+;TimeZone = "(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+;TimeZone = "(GMT+02:00) Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius"
+
+[UserData]
+FullName = "00000"
+OrgName = "org"
+ComputerName = "Good computer"
+;ProductID = <product ID> (CD-key)
+
+;[Display]==============================================
+
+[Display]
+BitsPerPel = 32
+XResolution = 1024
+YResolution = 768
+VRefresh = 85
+Flags = 0
+AutoConfirm = 1
+
